@@ -1,0 +1,11 @@
+command_whitelist:
+  - w
+  - m
+  - t
+  - msg
+  - emsg
+  - epm
+  - tell
+  - etell
+  - whisper
+  - ewhisper

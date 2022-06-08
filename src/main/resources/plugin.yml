@@ -1,0 +1,25 @@
+name: Freeze
+version: 1.0-SNAPSHOT
+author: Ninjoh
+api-version: 1.18
+
+main: com.gitlab.martijn_heil.freeze.Freeze
+commands:
+  freeze:
+       description: Freeze someone
+       aliases: [fr]
+       permission: freeze.freeze
+       usage: /freeze [player]
+  unfreeze:
+         description: Unfreeze someone
+         aliases: [unfr, ufr]
+         permission: freeze.freeze
+         usage: /unfreeze [player]
+
+permissions:
+  freeze.freeze:
+    default: op
+  freeze.notify:
+    default: op
+  freeze.exempt:
+    default: op

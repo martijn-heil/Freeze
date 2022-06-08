@@ -1,0 +1,31 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+
+group 'com.gitlab.martijn-heil.freeze'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 17
+targetCompatibility = 17
+
+defaultTasks 'clean', 'build'
+
+repositories {
+    maven { url "https://hub.spigotmc.org/nexus/content/repositories/snapshots/" }
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+
+    mavenCentral()
+    maven { url "https://jitpack.io" }
+    mavenLocal()
+}
+
+dependencies {
+    implementation("org.spigotmc:spigot-api:1.18.2-R0.1-SNAPSHOT") { changing = true }
+}
+
+//noinspection GroovyAssignabilityCheck
+processResources {
+    filter ReplaceTokens, tokens: [
+            "version": project.version
+    ]
+}
